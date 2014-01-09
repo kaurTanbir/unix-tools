@@ -1,7 +1,8 @@
 package tanbirka.unixtools;
 
-import java.io.*;
-import java.util.Scanner;
+import tanbirka.unixtools.MyFile;
+
+import java.io.IOException;
 
 class WordCount{
 	public static void main(String[] args) throws IOException {
@@ -16,25 +17,6 @@ class WordCount{
 
     System.out.println(noOfLines +" "+noOfWords+" "+noOfCharacter+" "+ args[0]);
 	}
-}
-
-class MyFile {
-  public String readFile(String fileName) throws IOException{
-    String returnValue = "";
-    String line = "";
-    File file = new File(fileName);;
-    try {
-        Scanner fileContent = new Scanner(file);
-		while (fileContent.hasNextLine()) {
-			line = fileContent.nextLine();
-			returnValue += line + "\n";
-		}
-    } 
-    catch (FileNotFoundException e) {
-		throw new RuntimeException("File not found");
-    } 
-    return returnValue;
-  }
 }
 
 class Count{
