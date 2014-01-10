@@ -14,7 +14,7 @@ class Head{
         if (args.length<2)
             ob.getLines(input);
         else {
-            int noOfLines = Integer.parseInt(args[1]);
+            int noOfLines = Integer.parseInt(args[1].substring(1));
             ob.getLines(input,noOfLines);
         }
     }
