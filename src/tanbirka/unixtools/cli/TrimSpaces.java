@@ -1,6 +1,7 @@
-package tanbirka.unixtools;
+package tanbirka.unixtools.cli;
 
-import tanbirka.unixtools.MyFile;
+import tanbirka.unixtools.api.ReduceSpaces;
+import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
 
@@ -12,16 +13,9 @@ public class TrimSpaces {
         String fileName = args[0];
 
         String fileContent = myFile.readFile(fileName);
-        System.out.println(fileContent);
         String modifiedText = rs.trimSpace(fileContent);
 
         myFile.writeFile(fileName,modifiedText);
-
     }
 }
 
-class ReduceSpaces{
-    public String trimSpace(String text){
-        return text.replaceAll("\\ +", " ").trim();
-    }
-}

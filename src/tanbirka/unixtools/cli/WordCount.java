@@ -1,6 +1,7 @@
-package tanbirka.unixtools;
+package tanbirka.unixtools.cli;
 
-import tanbirka.unixtools.MyFile;
+import tanbirka.unixtools.api.Count;
+import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
 
@@ -19,22 +20,3 @@ class WordCount{
 	}
 }
 
-class Count{
-	public int lineCount(String text) {
-		int count = 0;
-		String[] lines = text.split("\n");
-		return lines.length;
-	}
-	
-	public int wordCount(String text) {
-		int count = 0;
-		String[] words = text.split("\\s");
-		return words.length;
-	}
-
-	public int charCount(String text) {
-		int count = 0;
-		String[] characters = text.split("");
-		return characters.length;
-	}
-}

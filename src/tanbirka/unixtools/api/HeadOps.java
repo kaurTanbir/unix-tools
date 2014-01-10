@@ -1,4 +1,4 @@
-package tanbirka.unixtools.lib;
+package tanbirka.unixtools.api;
 
 public class HeadOps {
     public String[] lines;

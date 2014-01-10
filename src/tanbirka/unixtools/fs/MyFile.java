@@ -1,4 +1,4 @@
-package tanbirka.unixtools;
+package tanbirka.unixtools.fs;
 
 import java.io.*;
 import java.util.Scanner;
