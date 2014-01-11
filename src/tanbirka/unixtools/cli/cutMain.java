@@ -17,8 +17,8 @@ public class CutMain {
         int fieldNo = Integer.parseInt(properArgs[1].substring(2));
         String delimiter = properArgs[2].substring(3,4);
 
-        String desiredData = cut.cutLines(fileData, fieldNo, delimiter);
-        System.out.println(desiredData);
+        String desiredFieldData = cut.getFieldData(fileData, fieldNo, delimiter);
+        System.out.println(desiredFieldData);
     }
 
     String[] getProperArgs(String[] args){
