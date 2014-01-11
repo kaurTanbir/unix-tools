@@ -2,7 +2,7 @@ package tanbirka.unixtools.api;
 
 
 public class Uniq{
-    public void getLines(String lines){
+    public void getUniqLines(String lines){
         String[] result = lines.split("\n");
         for(int i=0; i< result.length-1; i++){
             if(0 != result[i].compareTo(result[i + 1]))

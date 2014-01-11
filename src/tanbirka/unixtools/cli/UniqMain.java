@@ -11,7 +11,7 @@ public class UniqMain {
         Uniq lines = new Uniq();
 
         String input = myFile.readFile(args[0]);
-        lines.getLines(input);
+        lines.getUniqLines(input);
 
     }
 }
