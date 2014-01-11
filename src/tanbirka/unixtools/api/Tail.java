@@ -1,7 +1,7 @@
 package tanbirka.unixtools.api;
 
 
-public class TailOps {
+public class Tail {
     public String[] lines;
     public void getLines (String data) {
         lines = data.split("\\n");

@@ -1,14 +1,14 @@
 package tanbirka.unixtools.cli;
 
+import tanbirka.unixtools.api.Tail;
 import tanbirka.unixtools.fs.MyFile;
-import tanbirka.unixtools.api.HeadOps;
 
 import java.io.IOException;
 
-class Head{
-    public static void  main(String args[])throws IOException {
+public class TailMain{
+    public static void  main(String args[])throws IOException{
         MyFile myFile = new MyFile();
-        HeadOps ob = new HeadOps();
+        Tail ob = new Tail();
 
         String input = myFile.readFile(args[0]);
         if (args.length<2)

@@ -1,7 +1,7 @@
 package tanbirka.unixtools.api;
 
 
-public class Count{
+public class WordCount{
 	public int lineCount(String text) {
 		int count = 0;
 		String[] lines = text.split("\n");

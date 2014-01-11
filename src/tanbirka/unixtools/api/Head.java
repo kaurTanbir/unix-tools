@@ -1,6 +1,6 @@
 package tanbirka.unixtools.api;
 
-public class HeadOps {
+public class Head {
     public String[] lines;
     public void getLines (String data,int numOfLines) {
         lines = data.split("\\n", numOfLines+1);

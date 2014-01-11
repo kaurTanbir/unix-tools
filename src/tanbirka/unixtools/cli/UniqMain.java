@@ -1,14 +1,14 @@
 package tanbirka.unixtools.cli;
 
-import tanbirka.unixtools.api.GetUniqLines;
+import tanbirka.unixtools.api.Uniq;
 import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
 
-public class Uniq {
+public class UniqMain {
     public static void main(String[] args) throws IOException {
         MyFile myFile = new MyFile();
-        GetUniqLines lines = new GetUniqLines();
+        Uniq lines = new Uniq();
 
         String input = myFile.readFile(args[0]);
         lines.getLines(input);

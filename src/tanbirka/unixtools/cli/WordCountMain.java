@@ -1,14 +1,14 @@
 package tanbirka.unixtools.cli;
 
-import tanbirka.unixtools.api.Count;
+import tanbirka.unixtools.api.WordCount;
 import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
 
-class WordCount{
+public class WordCountMain{
 	public static void main(String[] args) throws IOException {
 	MyFile myFile = new MyFile();
-	Count count = new Count();
+	WordCount count = new WordCount();
 
     String input = myFile.readFile(args[0]);
 
