@@ -19,7 +19,7 @@ public class MyFile {
     }
     return returnValue;
   }
-    public void writeFile(String fileName,String content){
+    public void writeToFile(String fileName,String content){
         try {
             PrintWriter writer = new PrintWriter(fileName, "UTF-8");
             String[]  temp = content.split("\n");

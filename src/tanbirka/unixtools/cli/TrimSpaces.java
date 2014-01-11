@@ -15,7 +15,7 @@ public class TrimSpaces {
         String fileContent = myFile.readFile(fileName);
         String modifiedText = rs.trimSpace(fileContent);
 
-        myFile.writeFile(fileName,modifiedText);
+        myFile.writeToFile(fileName,modifiedText);
     }
 }
 
