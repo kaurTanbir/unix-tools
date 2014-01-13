@@ -14,7 +14,7 @@ public class Head {
         return lines;
     }
     public String[] display(String[] lines,int numOfLines){
-        String[] desiredLine = new String[0];
+        String[] desiredLine = new String[numOfLines];
         for(int i = 0 ;i<numOfLines;i++ ){
             desiredLine[i] = lines[i];
         }
