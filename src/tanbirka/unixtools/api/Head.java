@@ -1,20 +1,23 @@
 package tanbirka.unixtools.api;
 
+
 public class Head {
     public String[] lines;
-    public void getLines (String data,int numOfLines) {
-        lines = data.split("\\n", numOfLines+1);
-        display(lines);
-        return;
+    public String[] getLines (String data) {
+        lines = data.split("\\n");
+        lines = display(lines,10);
+        return lines;
     }
-    public void getLines (String data) {
-        this.lines = data.split("\\n",11);
-        display(lines);
-        return;
+    public String[] getLines (String data,int numOfLines) {
+        lines = data.split("\\n");
+        lines = display(lines,numOfLines);
+        return lines;
     }
-    public void display(String[] lines){
-        for(int i = 0 ;i<lines.length-1;i++ ){
-            System.out.println(lines[i]);
+    public String[] display(String[] lines,int numOfLines){
+        String[] desiredLine = new String[0];
+        for(int i = 0 ;i<numOfLines;i++ ){
+            desiredLine[i] = lines[i];
         }
+        return desiredLine;
     }
 }
