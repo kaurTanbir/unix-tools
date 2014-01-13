@@ -3,21 +3,22 @@ package tanbirka.unixtools.api;
 
 public class Tail {
     public String[] lines;
-    public void getLines (String data) {
+    public String[] getLines (String data) {
         lines = data.split("\\n");
-        display(lines,10);
-        return;
+        lines = display(lines,10);
+        return lines;
     }
-    public void getLines (String data,int numOfLines) {
+    public String[] getLines (String data,int numOfLines) {
         lines = data.split("\\n");
-        display(lines,numOfLines);
-        return;
+        lines = display(lines,numOfLines);
+        return lines;
     }
-
-    public void display(String[] lines,int numOfLines){
+    public String[] display(String[] lines,int numOfLines){
         int length = lines.length;
-        for(int i = length-numOfLines ; i<length; i++ ){
-            System.out.println(lines[i]);
+        String[] result = new String[numOfLines];
+        for(int i = length-numOfLines,j = 0 ; i<length; i++,j++ ){
+            result[j] = lines[i];
         }
+        return result;
     }
 }
