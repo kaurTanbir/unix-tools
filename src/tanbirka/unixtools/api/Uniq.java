@@ -1,22 +1,22 @@
 package tanbirka.unixtools.api;
 
 public class Uniq{
-    public String[] getUniqLines(String lines){
+    public String getUniqLines(String lines){
 
+        StringBuilder uniqLines = new StringBuilder();
         String[] result = lines.split("\n");
         int length = result.length-1;
 
-        String[] uniqLines = new String[length];
         int j =0;
+
         for(int i=0; i< length; i++){
             if(!result[i].equals(result[i + 1])){
-                uniqLines[j] = result[i];
+                uniqLines.append(result[i]).append("\n");
                 j++;
-                System.out.println(j);
             }
         }
-        uniqLines[j] = result[length];
+        uniqLines.append(result[length]);
 
-        return  uniqLines;
+        return  uniqLines.toString();
     }
 }
