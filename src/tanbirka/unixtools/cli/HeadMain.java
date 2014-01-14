@@ -9,7 +9,7 @@ public class HeadMain{
     public static void  main(String args[])throws IOException {
         MyFile myFile = new MyFile();
         Head ob = new Head();
-        String[] lines;
+        String lines;
 
         String input = myFile.readFile(args[0]);
         if (args.length<2) {
@@ -19,9 +19,7 @@ public class HeadMain{
             int noOfLines = Integer.parseInt(args[1].substring(1));
             lines =  ob.getLines(input,noOfLines);
         }
-        for (String line : lines) {
-            System.out.println(line);
-        }
+            System.out.println(lines);
     }
 }
 

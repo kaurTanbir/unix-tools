@@ -1,3 +1,5 @@
+package tanbirka.unixtools.api;
+
 import org.junit.Test;
 import tanbirka.unixtools.api.WordCount;
 

@@ -2,22 +2,22 @@ package tanbirka.unixtools.api;
 
 
 public class Head {
-    public String[] lines;
-    public String[] getLines (String data) {
-        lines = data.split("\\n");
-        lines = display(lines,10);
-        return lines;
-    }
-    public String[] getLines (String data,int numOfLines) {
-        lines = data.split("\\n");
-        lines = display(lines,numOfLines);
-        return lines;
-    }
-    public String[] display(String[] lines,int numOfLines){
-        String[] desiredLine = new String[numOfLines];
-        for(int i = 0 ;i<numOfLines;i++ ){
-            desiredLine[i] = lines[i];
+    StringBuilder result = new StringBuilder("");
+    String[] lines;
+
+    public String getLines(String data, int numOfLines) {
+        lines = data.split("\n", numOfLines + 1);
+        for (int i = 0; i < numOfLines && i < lines.length; i++) {
+            result.append(lines[i]).append("\n");
         }
-        return desiredLine;
+        return result.toString();
+    }
+
+    public String getLines(String data) {
+        lines = data.split("\n", 11);
+        for (int i = 0; i < 10 && i < lines.length; i++) {
+            result.append(lines[i]).append("\n");
+        }
+        return result.toString();
     }
 }
