@@ -41,22 +41,22 @@ java -cp <path>unix-tools.jar  toolName   arguments
 #### Reduces more than one occurrences of blank spaces into one. Takes a input file and writes into another file.
     * tk_reduceSpaces.sh InputFile outputFile
 
-    ####SHELL FILES
-    You Can Also Use These Commands same as Your Shell Commands
+####SHELL FILES
+You Can Also Use These Commands same as Your Shell Commands
 
 
-    Just Download unix-tools.jar file and shell files in the same folder
+Just Download unix-tools.jar file and shell files in the same folder
 
 
-    ####HOW TO RUN?
+####HOW TO RUN?
 
-    just run setPath shell file once and you are done
-
-
-    `$sh setPath.sh`
-
-    That's it, Now you are ready to run these commands
-    ####RUN COMMANDS
+just run setPath shell file once and you are done
 
 
-    `$sh ta_runWC.sh filename.txt`
+`$sh setPath.sh`
+
+That's it, Now you are ready to run these commands
+####RUN COMMANDS
+
+
+`$sh ta_runWC.sh filename.txt`
