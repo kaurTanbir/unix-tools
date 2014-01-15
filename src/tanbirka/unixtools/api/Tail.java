@@ -7,7 +7,7 @@ public class Tail {
 
     public String getLines(String data, int numOfLines) {
         lines = data.split("\n");
-        for (int i = lines.length - 1; i > lines.length - numOfLines && i > 0; i--) {
+        for (int i = lines.length - numOfLines; i < lines.length ; i++) {
             result.append(lines[i]).append("\n");
         }
         return result.toString();
@@ -15,7 +15,7 @@ public class Tail {
 
     public String getLines(String data) {
         lines = data.split("\n");
-        for (int i = lines.length - 1; i > lines.length - 11 && i > 0; i--) {
+        for (int i = lines.length-10; i < lines.length; i++) {
             result.append(lines[i]).append("\n");
         }
         return result.toString();
