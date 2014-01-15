@@ -3,7 +3,6 @@ package tanbirka.unixtools.api;
 
 public class Cut {
     public String getFieldData(String data, int field_no, String delimiter) {
-        System.out.println(field_no);
         String[] lines;
         StringBuilder result = new StringBuilder("");
         lines = data.split("\n");
