@@ -5,7 +5,7 @@ This repository has the simulated implementation of different unix-tools
 
 #### Tool Usage
 Include jar file to your Project
-
+Just Download unix-tools.jar  file from `\\blrfs01\TeamShares\STEP\STEP2\java-assignment\TA`
 
 To run from command line :-
 ```java
@@ -16,7 +16,7 @@ java -cp <path>unix-tools.jar  toolName   arguments
 You Can Also Use These Commands same as Your Shell Commands
 
 
-Just Download unix-tools.jar  file and shell files from `\\blrfs01\TeamShares\STEP\STEP2\java-assignment`
+Just Download unix-tools.jar  file and shell files from `\\blrfs01\TeamShares\STEP\STEP2\java-assignment\TA`
           in the same folder
 
 
