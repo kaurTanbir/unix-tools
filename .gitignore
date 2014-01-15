@@ -1,3 +1,5 @@
 /.idea
 *.class
 unix-tools.iml
+/.out
+/.shellScript
