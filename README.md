@@ -16,7 +16,8 @@ java -cp <path>unix-tools.jar  toolName   arguments
 You Can Also Use These Commands same as Your Shell Commands
 
 
-Just Download unix-tools.jar file and shell files in the same folder
+Just Download unix-tools.jar  file and shell files from `\\blrfs01\TeamShares\STEP\STEP2\java-assignment`
+          in the same folder
 
 
 ####HOW TO RUN?

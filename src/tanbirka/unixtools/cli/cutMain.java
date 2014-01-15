@@ -17,7 +17,7 @@ public class CutMain {
         String fileData = myfile.readFile(properArgs[0]);
         int fieldNo = Integer.parseInt(properArgs[1].substring(2));
 
-        if(properArgs.length > 2) delimiter = properArgs[2].substring(3, 4);
+        if(properArgs.length > 2) delimiter = properArgs[2].substring(2);
 
         String desiredFieldData = cut.getFieldData(fileData, fieldNo, delimiter);
         System.out.println(desiredFieldData);
