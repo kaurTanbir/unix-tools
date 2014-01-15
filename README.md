@@ -59,4 +59,4 @@ That's it, Now you are ready to run these commands
 ####RUN COMMANDS
 
 
-`$sh ta_runWC.sh filename.txt`
+`$sh tk_runWC.sh filename.txt`
