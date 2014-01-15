@@ -10,12 +10,13 @@ public class TrimSpaces {
         MyFile myFile = new MyFile();
         ReduceSpaces rs = new ReduceSpaces();
 
-        String fileName = args[0];
+        String fileToRead = args[0];
+        String fileToWrite = args[1];
 
-        String fileContent = myFile.readFile(fileName);
+        String fileContent = myFile.readFile(fileToRead);
         String modifiedText = rs.trimSpace(fileContent);
 
-        myFile.writeToFile(fileName,modifiedText);
+        myFile.writeToFile(fileToWrite,modifiedText);
     }
 }
 

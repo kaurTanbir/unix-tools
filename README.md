@@ -9,20 +9,20 @@ tail, sort, uniq` and also one extra functionality that is `reduceSpaces`.
 
 ## cut :
 #### Filters and gives the asked columns in given file.
-    * tk_cut.sh filename
+    * tk_cut.sh filename FieldNumber [OPTIONS .. delimeter]
 
 ## head:
 #### Head gives the first `n` lines from the given files.
-    * tk_head.sh filename
+    * tk_head.sh filename -[Number of lines]
 
 ## tail:
 #### Tail gives the first `n` lines from the given files.
-    * tk_tail.sh filename
+    * tk_tail.sh filename -[Number of lines]
 
 
 ## sort:
-#### Sorts the lines in a file.
-    * tk_sort.sh Filename
+#### Sorts the lines in a file according to given options: -r for reverse; -n for numeric sort. without options sort default by alphabet.
+    * tk_sort.sh Filename [OPTIONS..]
 
 ## uniq:
 #### Filters out the adjacent  repeated lines in a file.
