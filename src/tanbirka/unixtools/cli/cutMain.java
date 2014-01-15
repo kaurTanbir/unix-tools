@@ -1,6 +1,7 @@
 package tanbirka.unixtools.cli;
 
 import tanbirka.unixtools.api.Cut;
+import tanbirka.unixtools.api.Sort;
 import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
@@ -12,17 +13,18 @@ public class CutMain {
         Cut cut = new Cut();
 
         String properArgs[] = obj.getProperArgs(args);
-
+        String delimiter = " ";
         String fileData = myfile.readFile(properArgs[0]);
         int fieldNo = Integer.parseInt(properArgs[1].substring(2));
-        String delimiter = properArgs[2].substring(3,4);
+
+        if(properArgs.length > 2) delimiter = properArgs[2].substring(3, 4);
 
         String desiredFieldData = cut.getFieldData(fileData, fieldNo, delimiter);
         System.out.println(desiredFieldData);
     }
 
     String[] getProperArgs(String[] args){
-        String options[] = new String[3];
+        String options[] = new String[args.length];
 
         for(int i = 0; i<args.length; i++){
             if(!CutMain.isFileName(args[i])) {
