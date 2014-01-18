@@ -31,5 +31,13 @@
         <javac srcdir = "test" destdir= "classes" classpathref = "classpath" includeAntRuntime = "false"/>
     </target>
 
+    <target name = "runTests" depends = "compileTests">
+        <java classname = "junit.textui.TestRunner">
+            <classpath>
+                <path refid = "classpath"/>
+                <path location = "out/lib/unix-tools.jar"/>
+            </classpath>
+        </java>
+    </target>
 
 </project>
