@@ -23,4 +23,13 @@
         <jar destfile = "unix-tools/lib/unix-tools.jar" basedir = "classes"/>
     </target>
 
+    <path id="classpath">
+        <fileset dir="dependencies" includes="*.jar"/>
+    </path>
+
+    <target name= "compileTests" depends="compile">
+        <javac srcdir = "test" destdir= "classes" classpathref = "classpath" includeAntRuntime = "false"/>
+    </target>
+
+
 </project>
