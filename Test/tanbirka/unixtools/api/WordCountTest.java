@@ -10,7 +10,7 @@ public class WordCountTest {
     @Test
     public void testLineCount() throws Exception {
         WordCount count = new WordCount();
-        int noOfLines = count.wordCount("hello\n how\n are\n you");
+        int noOfLines = count.lineCount("hello\n how\n are\n you");
         assertEquals(4,noOfLines );
     }
 
@@ -25,6 +25,6 @@ public class WordCountTest {
     public void testCharCount() throws Exception {
         WordCount count = new WordCount();
         int noOfCharacters = count.charCount("hello how are you");
-        assertEquals(3, noOfCharacters);
+        assertEquals(18, noOfCharacters);
     }
 }
