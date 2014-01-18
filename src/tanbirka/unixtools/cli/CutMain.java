@@ -1,5 +1,6 @@
 package tanbirka.unixtools.cli;
 
+import tanbirka.unixtools.api.Cut;
 import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
