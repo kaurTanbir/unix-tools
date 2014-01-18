@@ -1,7 +1,7 @@
 package tanbirka.unixtools.api;
 
 
-public class Cut1 {
+public class Cut {
     public String getFieldData(String data, int field_no, String delimiter) {
         String[] lines;
         StringBuilder result = new StringBuilder("");

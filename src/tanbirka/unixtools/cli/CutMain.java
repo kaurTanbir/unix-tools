@@ -4,9 +4,9 @@ import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
 
-public class CutMain1 {
+public class CutMain {
     public static void main(String[] args) throws IOException {
-        CutMain1 obj = new CutMain1();
+        CutMain obj = new CutMain();
         MyFile myfile = new MyFile();
         Cut cut = new Cut();
 
@@ -25,13 +25,13 @@ public class CutMain1 {
         String options[] = new String[args.length];
 
         for(int i = 0; i<args.length; i++){
-            if(!CutMain1.isFileName(args[i])) {
+            if(!CutMain.isFileName(args[i])) {
                 options[0] = args[i];
             }
-            if(CutMain1.isfieldNo(args[i])) {
+            if(CutMain.isfieldNo(args[i])) {
                 options[1] = args[i];
             }
-            if(CutMain1.isDelimiter(args[i])) {
+            if(CutMain.isDelimiter(args[i])) {
                 options[2] = args[i];
             }
         }
