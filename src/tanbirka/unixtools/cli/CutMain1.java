@@ -1,14 +1,12 @@
 package tanbirka.unixtools.cli;
 
-import tanbirka.unixtools.api.Cut;
-import tanbirka.unixtools.api.Sort;
 import tanbirka.unixtools.fs.MyFile;
 
 import java.io.IOException;
 
-public class CutMain {
+public class CutMain1 {
     public static void main(String[] args) throws IOException {
-        CutMain obj = new CutMain();
+        CutMain1 obj = new CutMain1();
         MyFile myfile = new MyFile();
         Cut cut = new Cut();
 
@@ -27,13 +25,13 @@ public class CutMain {
         String options[] = new String[args.length];
 
         for(int i = 0; i<args.length; i++){
-            if(!CutMain.isFileName(args[i])) {
+            if(!CutMain1.isFileName(args[i])) {
                 options[0] = args[i];
             }
-            if(CutMain.isfieldNo(args[i])) {
+            if(CutMain1.isfieldNo(args[i])) {
                 options[1] = args[i];
             }
-            if(CutMain.isDelimiter(args[i])) {
+            if(CutMain1.isDelimiter(args[i])) {
                 options[2] = args[i];
             }
         }
