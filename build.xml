@@ -14,7 +14,7 @@
     </target>
 
     <target name = "compileTest" depends = "compile">
-        <javac srcdir = "test" destdir= "build/classes/test"
+        <javac srcdir = "Test" destdir= "build/classes/test"
                classpath="dependencies/junit-4.10.jar;build/classes/src" includeAntRuntime = "false"/>
     </target>
 
