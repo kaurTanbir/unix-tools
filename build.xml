@@ -1,4 +1,4 @@
-<project name = "unix-tools">
+<project name = "unix-tools" default = "createZip">
     <target name = "clean">
         <delete dir = "classes"/>
     </target>
@@ -38,6 +38,11 @@
                 <path location = "out/lib/unix-tools.jar"/>
             </classpath>
         </java>
+    </target>
+
+    <target name = "createZip" depends = "compile,createFolderStructer,createJar,runTests">
+        <zip destfile = "unix-tools.zip" basedir = "unix-tools" update = "true"/>
+        <delete dir = "unix-tools"/>
     </target>
 
 </project>
