@@ -40,7 +40,14 @@
         </java>
     </target>
 
-    <target name = "createZip" depends = "compile,createFolderStructer,createJar,runTests">
+    <target name = "generateDocs">
+    <javadoc packagenames = "tanbirka.unixtools.*"
+    sourcepath = "src"
+    destdir = "unix-tools/docs"
+    author = "true" version = "true"/>
+    </target>
+
+    <target name = "createZip" depends = "compile,createFolderStructer,createJar,runTests,generateDocs">
         <zip destfile = "unix-tools.zip" basedir = "unix-tools" update = "true"/>
         <delete dir = "unix-tools"/>
     </target>
