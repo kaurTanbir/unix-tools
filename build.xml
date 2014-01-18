@@ -1,47 +1,32 @@
-<project name = "unix-tools" default = "createZip">
+<project name = "unix-tools" default = "runTest">
+
     <target name = "clean">
-        <delete dir = "classes"/>
+        <delete dir = "build"/>
     </target>
 
-    <target name = "compile">
-        <mkdir dir = "classes/src"/>
-        <javac srcdir = "src" destdir = "classes/src" includeAntRuntime = "false"/>
+    <target name="createBuildFolder">
+        <mkdir dir="build/classes/test"/>
+        <mkdir dir="build/classes/src"/>
     </target>
 
-    <target name = "createFolderStructer">
-        <mkdir dir = "unix-tools"/>
-        <mkdir dir = "unix-tools/lib"/>
-        <mkdir dir = "unix-tools/bin"/>
-        <mkdir dir = "unix-tools/docs"/>
-        <copy todir = "unix-tools/bin">
-            <fileset dir = "run-scripts"/>
-        </copy>
-        <copy file = "README.md" tofile = "unix-tools/README.md"/>
+    <target name = "compile" depends = "createBuildFolder">
+        <javac srcdir = "src" destdir = "build/classes/src" includeAntRuntime = "false"/>
     </target>
-
-    <target name = "createJar" depends = "compile,createFolderStructer">
-        <jar destfile = "unix-tools/lib/unix-tools.jar" basedir = "classes/scr"/>
-    </target>
-    <path id="classpath">
-        <fileset dir="dependencies/test" includes="*.jar"/>
-        <fileset dir="build/classes/src" includes="*.class"/>
-    </path>
 
     <target name = "compileTest" depends = "compile">
-        <mkdir dir = "classes/test"></mkdir>
-        <javac srcdir = "test" destdir= "classes/test"
-               classpath="dependencies/junit-4.10.jar;classes/src" includeAntRuntime = "false"/>
+        <javac srcdir = "test" destdir= "build/classes/test"
+               classpath="dependencies/junit-4.10.jar;build/classes/src" includeAntRuntime = "false"/>
     </target>
 
     <target name="runTest" depends="compileTest">
         <junit>
             <classpath>
-                <pathelement location="classes/src" />
-                <pathelement location="classes/test" />
+                <pathelement location="build/classes/src" />
+                <pathelement location="build/classes/test" />
                 <pathelement location="dependencies/junit-4.10.jar"/>
             </classpath>
             <batchtest>
-                <fileset dir="classes/test">
+                <fileset dir="build/classes/test">
                     <include name="**/*Test*" />
                 </fileset>
             </batchtest>
@@ -49,17 +34,28 @@
         </junit>
     </target>
 
-
-    <target name = "generateDocs">
-    <javadoc packagenames = "tanbirka.unixtools.*"
-    sourcepath = "src"
-    destdir = "unix-tools/docs"
-    author = "true" version = "true"/>
+    <target name = "createFolderStructer" depends="runTest">
+        <mkdir dir="build/distribute/bin"/>
+        <mkdir dir="build/distribute/lib"/>
+        <copy todir = "build/distribute/bin">
+            <fileset dir = "run-scripts"/>
+        </copy>
+        <copy file = "README.md" tofile = "build/distribute/README.md"/>
     </target>
 
-    <target name = "createZip" depends = "compile,createFolderStructer,createJar,runTest,generateDocs">
-        <zip destfile = "unix-tools.zip" basedir = "unix-tools" update = "true"/>
-        <delete dir = "unix-tools"/>
+    <target name = "build" depends = "createFolderStructer">
+        <jar destfile = "build/distribute/lib/unix-tools.jar" basedir = "build/classes/src"/>
+    </target>
+
+    <target name = "docs" depends="build">
+        <javadoc packagenames = "tanbirka.unixtools.*"
+                 sourcepath = "src"
+                 destdir = "build/distribute/docs"
+                 author = "true" version = "true"/>
+    </target>
+
+    <target name = "dist" depends = "docs">
+        <zip destfile = "unix-tools.zip" basedir = "build/distribute" update = "true"/>
     </target>
 
 </project>
