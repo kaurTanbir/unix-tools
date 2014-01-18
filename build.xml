@@ -19,5 +19,8 @@
         <copy file = "README.md" tofile = "unix-tools/README.md"/>
     </target>
 
+    <target name = "createJar" depends = "compile,createFolderStructer">
+        <jar destfile = "unix-tools/lib/unix-tools.jar" basedir = "classes"/>
+    </target>
 
 </project>
