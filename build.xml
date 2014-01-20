@@ -1,10 +1,10 @@
-<project name = "unix-tools" default = "runTest">
+<project name = "unix-tools" default = "dist">
 
     <target name = "clean">
         <delete dir = "build"/>
     </target>
 
-    <target name="createBuildFolder">
+    <target name="createBuildFolder" depends="clean">
         <mkdir dir="build/classes/test"/>
         <mkdir dir="build/classes/src"/>
     </target>
