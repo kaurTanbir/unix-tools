@@ -33,7 +33,7 @@
     </target>
 
     <target name = "compileTest" depends = "compile">
-        <javac srcdir = "test" destdir= "build/classes/test" debug="yes"
+        <javac srcdir = "Test" destdir= "build/classes/test" debug="yes"
                classpath="dependencies/junit-4.10.jar;build/classes/src" includeAntRuntime = "false">
             <classpath refid="cobertura.classpath" />
         </javac>
