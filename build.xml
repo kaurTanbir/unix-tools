@@ -34,7 +34,7 @@
 
     <target name = "compileTest" depends = "compile">
         <javac srcdir = "test" destdir= "build/classes/test" debug="yes"
-               classpath="dependencies/test/junit-4.10.jar;build/classes/src" includeAntRuntime = "false">
+               classpath="dependencies/junit-4.10.jar;build/classes/src" includeAntRuntime = "false">
             <classpath refid="cobertura.classpath" />
         </javac>
     </target>
@@ -44,7 +44,7 @@
             <classpath>
                 <pathelement location="build/classes/src" />
                 <pathelement location="build/classes/test" />
-                <pathelement location="dependencies/test/junit-4.10.jar"/>
+                <pathelement location="dependencies/junit-4.10.jar"/>
             </classpath>
             <batchtest>
                 <fileset dir="build/classes/test">
@@ -79,7 +79,7 @@
                 <pathelement location="build/code-coverage/instrumented"/>
                 <pathelement location="build/classes/src" />
                 <pathelement location="build/classes/test" />
-                <pathelement location="dependencies/test/junit-4.10.jar"/>
+                <pathelement location="dependencies/junit-4.10.jar"/>
             </classpath>
 
             <classpath refid= "cobertura.classpath"/>
