@@ -8,7 +8,7 @@
     </target>
 
     <target name="init">
-        <mkdir dir="build/classes/test"/>
+        <mkdir dir="build/classes/Test"/>
         <mkdir dir="build/classes/src"/>
         <mkdir dir="build/code-coverage/instrumented" />
         <mkdir dir="build/code-coverage/reports/xml" />
@@ -33,7 +33,7 @@
     </target>
 
     <target name = "compileTest" depends = "compile">
-        <javac srcdir = "Test" destdir= "build/classes/test" debug="yes"
+        <javac srcdir = "Test" destdir= "build/classes/Test" debug="yes"
                classpath="dependencies/junit-4.10.jar;build/classes/src" includeAntRuntime = "false">
             <classpath refid="cobertura.classpath" />
         </javac>
@@ -43,11 +43,11 @@
         <junit failureproperty = "test.failed">
             <classpath>
                 <pathelement location="build/classes/src" />
-                <pathelement location="build/classes/test" />
+                <pathelement location="build/classes/Test" />
                 <pathelement location="dependencies/junit-4.10.jar"/>
             </classpath>
             <batchtest>
-                <fileset dir="build/classes/test">
+                <fileset dir="build/classes/Test">
                     <include name="**/*Test*" />
                 </fileset>
             </batchtest>
@@ -87,7 +87,7 @@
             <formatter type="xml" />
             <test name="testcase" todir="build/code-coverage/reports/xml" if="testcase" />
             <batchtest todir="build/code-coverage/reports/xml" unless="testcase">
-                <fileset dir="test">
+                <fileset dir="Test">
                     <include name="**/*Test.java" />
                 </fileset>
             </batchtest>
