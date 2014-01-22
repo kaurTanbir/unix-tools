@@ -78,7 +78,7 @@
             <classpath>
                 <pathelement location="build/code-coverage/instrumented"/>
                 <pathelement location="build/classes/src" />
-                <pathelement location="build/classes/test" />
+                <pathelement location="build/classes/Test" />
                 <pathelement location="dependencies/junit-4.10.jar"/>
             </classpath>
 
